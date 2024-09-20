@@ -1,4 +1,4 @@
- alert("Hello");
+
 function updateTime() {
     let joburgElement = document.querySelector("#johannesburg");
     let joburgDateElement = joburgElement.querySelector(".date");
