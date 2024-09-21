@@ -15,15 +15,16 @@
     <h1>World Clock</h1>
     <select id="city">
         <option value="" >Select a city</option>
+        <option value="current">My current location</option>
         <option value="Europe/Paris">Paris</option>
-        <option value="Africa/Johannesburg">Johannesburg</option>
+        <option value="Atlantic/South_Georgia">South Georgia</option>
         <option value="Asia/Hong_Kong">Hong Kong</option>
     </select>
-    
+    //<-- Africa/Johannesburg-->
         <div id="cities">
-          <div class="city" id="johannesburg">
+          <div class="city" id="south">
             <div>
-              <h2>Johannesburg</h2>
+              <h2>South Georgia</h2>
               <div class="date"></div>
             </div>
             <div class="time"></div>
@@ -44,14 +45,16 @@
         open sourced on GitHub</a>
     </footer>
     <script src="script.js"></script>
-    <script>function updateCity(event) {
+
+    <script>
+      function updateCity(event) {
         let cityTimeZone = event.target.value;
-
-
+          if (cityTimeZone === "current") {
+          cityTimeZone = moment.tz.guess();
+        }
         if (!cityTimeZone) {
           return;
         }
-
         let cityName = cityTimeZone.replace("_", " ").split("/")[1];
         let cityTime = moment().tz(cityTimeZone);
         let citiesElement = document.querySelector("#cities");

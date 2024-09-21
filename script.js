@@ -1,11 +1,11 @@
 function updateTime() {
-    let joburgElement = document.querySelector("#johannesburg");
-    if (joburgElement) {
-    let joburgDateElement = joburgElement.querySelector(".date");
-    let joburgTimeElement = joburgElement.querySelector(".time");
-    let joburbTime = moment().tz("Africa/Johannesburg");
-    joburgDateElement.innerHTML = joburbTime.format("MMMM	Do YYYY");
-    joburgTimeElement.innerHTML = joburbTime.format(
+    let southElement = document.querySelector("#south");
+    if (southElement) {
+    let southDateElement = southElement.querySelector(".date");
+    let southTimeElement = southElement.querySelector(".time");
+    let southTime = moment().tz("Atlantic/South_Georgia");
+    southDateElement.innerHTML = southTime.format("MMMM	Do YYYY");
+    southTimeElement.innerHTML = southTime.format(
       "h:mm:ss [<small>]A[</small>]");
     }
 
